@@ -55,11 +55,11 @@ jobs:
           host: ${{ secrets.HOST_SERVER }}  # Server IP from secrets
           username: ${{ secrets.HOST_USER_NAME }}  # SSH username from secrets
           key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}  # SSH private key from secrets
-          port: 22  
+          port: 22  # SSH port
           script: |
             cd /home/ubuntu/backend
             echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
-            docker-compose down  # Stop any running containers
-            docker-compose pull  # Pull the latest image
-            docker-compose up -d  # Start the containers in detached mode
+            docker compose down  # Stop any running containers
+            docker compose pull  # Pull the latest image
+            docker compose up -d  # Start the containers in detached mode
             rm -rf /home/ubuntu/backend  # Clean up the local backend directory
