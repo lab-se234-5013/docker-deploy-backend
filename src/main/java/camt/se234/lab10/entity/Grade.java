@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @Builder
 public class Grade {
-    String grade;
+    String grade;  // No authorization check to verify if user has permission to set the grade
 }
