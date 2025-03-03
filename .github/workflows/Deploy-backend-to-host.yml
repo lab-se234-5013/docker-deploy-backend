@@ -55,7 +55,7 @@ jobs:
           host: ${{ secrets.HOST_SERVER }}  # Server IP from secrets
           username: ${{ secrets.HOST_USER_NAME }}  # SSH username from secrets
           key: ${{ secrets.HOST_SSH_PRIVATE_KEY }}  # SSH private key from secrets
-          port: 22  # SSH port
+          port: 22  # SSH ports
           script: |
             cd /home/ubuntu/backend
             echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
