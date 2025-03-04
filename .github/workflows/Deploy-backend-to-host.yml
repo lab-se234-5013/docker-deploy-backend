@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_TOKEN }}  # Docker Hub Access Token from secrets
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6  # Build and push the Docker image
+        uses: docker/build-push-action@v6  # Build and push the Docker image.
         with:
           context: .  # Current directory context for Docker build
           push: true  # Push the image to Docker Hub
